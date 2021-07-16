@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterPanelComponent } from './components/regiserPanel/register-panel/register-panel.component';
 import { LoginPanelComponent } from './components/loginPanel/login-panel/login-panel.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MainPanelComponent } from './components/mainPanel/main-panel/main-panel.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterPanelComponent, LoginPanelComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent, RegisterPanelComponent, LoginPanelComponent, MainPanelComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,1 +1,43 @@
-<p>SIEMAAAAA</p>
+<div class="registerPanel">
+  <button class="registerPanel__goBack" routerLink="../login">
+    <svg viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0.93934 10.9393C0.353553 11.5251 0.353553 12.4749 0.93934 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92893 13.1924 1.97919 12.6066 1.3934C12.0208 0.807613 11.0711 0.807612 10.4853 1.3934L0.93934 10.9393ZM4 10.5L2 10.5L2 13.5L4 13.5L4 10.5Z"
+        fill="white"
+      />
+    </svg>
+  </button>
+  <form class="registerPanel__form" (ngSubmit)="registerSend($event)">
+    <h3>Register</h3>
+    <input
+      type="text"
+      class="registerPanel__form__field"
+      name="userName"
+      placeholder="User name"
+      autocomplete="off"
+      [(ngModel)]="userName"
+    />
+    <input
+      type="text"
+      class="registerPanel__form__field"
+      name="Login"
+      password="Login"
+      placeholder="Login"
+      autocomplete="off"
+      [(ngModel)]="login"
+    />
+    <input
+      type="password"
+      class="registerPanel__form__field"
+      name="Password"
+      name="password"
+      placeholder="Password"
+      autocomplete="off"
+      [(ngModel)]="password"
+    />
+    <p *ngIf="msg.length > 0">
+      {{ msg }}
+    </p>
+    <button>Register</button>
+  </form>
+</div>

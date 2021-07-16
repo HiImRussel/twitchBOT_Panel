@@ -70,10 +70,25 @@
         fill="#FF895A"
       />
     </svg>
-    <input class="loginPanel__form__input" placeholder="Login" />
-    <input class="loginPanel__form__input" placeholder="Register" />
-    <button class="loginPanel__form__button">Login</button>
+    <input
+      class="loginPanel__form__input"
+      placeholder="Login"
+      [(ngModel)]="login"
+      name="login"
+      autocomplete="off"
+    />
+    <input
+      class="loginPanel__form__input"
+      placeholder="Register"
+      [(ngModel)]="password"
+      name="password"
+      autocomplete="off"
+    />
+    <p *ngIf="errMsg.length > 0">
+      {{ errMsg }}
+    </p>
+    <button class="loginPanel__form__button" (click)="logIn()">Login</button>
     <p>or</p>
-    <a routerLink="/register" routerLinkActive="active">Register</a>
+    <p routerLink="../register">Register</p>
   </form>
 </div>

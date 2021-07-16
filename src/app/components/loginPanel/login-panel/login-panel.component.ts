@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
 import { UserService } from './../../../services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -27,7 +26,7 @@ export class LoginPanelComponent implements OnInit {
         if (data.status === undefined) {
           this.user.logIn(data);
           this.errMsg = '';
-          this.checkloginStatus();
+          this.router.navigateByUrl('/panel');
         } else {
           this.errMsg = data.msg;
         }
@@ -42,13 +41,11 @@ export class LoginPanelComponent implements OnInit {
     });
   }
 
-  checkloginStatus() {
-    if (this.userData.isLogged === true) {
+  ngOnInit(): void {
+    if (this.user.userData.isLogged === false) {
+      this.router.navigateByUrl('/login');
+    } else {
       this.router.navigateByUrl('/panel');
     }
-  }
-
-  ngOnInit(): void {
-    this.user.getUserData().subscribe((data) => (this.userData = data));
   }
 }

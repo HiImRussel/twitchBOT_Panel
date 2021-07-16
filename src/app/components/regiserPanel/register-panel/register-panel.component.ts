@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { UserService } from './../../../services/user.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,7 @@ export class RegisterPanelComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private user: UserService,
-    private location: Location
+    private router: Router
   ) {}
 
   registerSend(e: Event) {
@@ -43,5 +44,11 @@ export class RegisterPanelComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.user.userData.isLogged === false) {
+      this.router.navigateByUrl('/register');
+    } else {
+      this.router.navigateByUrl('/panel');
+    }
+  }
 }

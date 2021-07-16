@@ -1,6 +1,6 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { UserService } from './services/user.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,19 +9,13 @@ import { Location } from '@angular/common';
   providers: [UserService],
 })
 export class AppComponent {
-  userData: any = { isUserLogged: false };
-  constructor(private user: UserService, private location: Location) {}
+  constructor(private user: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    this.user.getUserData().subscribe((data) => {
-      this.userData = data;
-    });
-    this.checkStatus();
-  }
-
-  checkStatus() {
-    if (this.userData.isUserLogged === false) {
-      this.location.replaceState('/login');
+    if (this.user.userData.isLogged === false) {
+      this.router.navigateByUrl('/login');
+    } else {
+      this.router.navigateByUrl('/panel');
     }
   }
 }

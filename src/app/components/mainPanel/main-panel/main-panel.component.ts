@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { UserService } from './../../../services/user.service';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,14 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./main-panel.component.scss'],
 })
 export class MainPanelComponent implements OnInit {
-  userData: any;
   constructor(private user: UserService, private router: Router) {}
 
   ngOnInit(): void {
-    this.user.getUserData().subscribe((data) => (this.userData = data));
-    this.userData = this.user.userStatus();
-    if (!this.userData.isLogged) {
+    if (this.user.userData.isLogged === false) {
       this.router.navigateByUrl('/login');
+    } else {
+      this.router.navigateByUrl('/panel');
     }
   }
 }

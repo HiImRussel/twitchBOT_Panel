@@ -1,0 +1,79 @@
+.navMenu {
+  float: left;
+  height: 100vh;
+  width: 20vw;
+  background-color: #333744;
+  font-family: "Oxygen", sans-serif;
+}
+
+.navMenu__logo {
+  margin-top: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navMenu__logo svg {
+  height: 80px;
+}
+
+.navMenu__logo h3 {
+  color: white;
+  margin-top: 10px;
+}
+
+.navMenu__logo h3 span {
+  color: #30d6b8;
+}
+
+.navMenu__menu {
+  margin-top: 50px;
+}
+
+.navMenu__menu ul {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.navMenu__menu ul li {
+  list-style: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px 0px 10px 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.navMenu__menu ul li:nth-of-type(1) {
+  background-color: #262933;
+}
+
+.navMenu__menu ul li svg {
+  height: 27px;
+  width: 27px;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=nav-menu.component.css.map */

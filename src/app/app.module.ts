@@ -12,9 +12,20 @@ import { NavMenuComponent } from './components/navMenu/nav-menu/nav-menu.compone
 import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
 import { BannedWordsComponent } from './components/banned-words/banned-words.component';
 import { BannersComponent } from './components/banners/banners.component';
+import { AddBannedWordComponent } from './components/addBannedWord/add-banned-word/add-banned-word.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterPanelComponent, LoginPanelComponent, MainPanelComponent, NavMenuComponent, DashboardComponent, BannedWordsComponent, BannersComponent],
+  declarations: [
+    AppComponent,
+    RegisterPanelComponent,
+    LoginPanelComponent,
+    MainPanelComponent,
+    NavMenuComponent,
+    DashboardComponent,
+    BannedWordsComponent,
+    BannersComponent,
+    AddBannedWordComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

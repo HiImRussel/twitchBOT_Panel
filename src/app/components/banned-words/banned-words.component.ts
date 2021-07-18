@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +10,21 @@ import { UserService } from 'src/app/services/user.service';
 export class BannedWordsComponent implements OnInit {
   words: any = [];
 
+  @Output()
+  viewEmmiter = new EventEmitter();
+
   constructor(private user: UserService, private http: HttpClient) {}
+
+  deleteWord(id: string) {
+    this.words = this.words.filter((word: any) => word._id !== id);
+    this.http
+      .delete('http://127.0.0.1:3000/deleteWord/' + id)
+      .subscribe((data) => console.log(data));
+  }
+
+  goToAdd() {
+    this.viewEmmiter.emit('add-word');
+  }
 
   ngOnInit(): void {
     this.http
@@ -18,5 +32,6 @@ export class BannedWordsComponent implements OnInit {
         userId: this.user.userData.id,
       })
       .subscribe((data: any) => (this.words = data.words));
+    console.log(this.words);
   }
 }

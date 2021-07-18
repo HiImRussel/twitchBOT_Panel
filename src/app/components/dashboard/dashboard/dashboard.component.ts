@@ -8,7 +8,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardComponent implements OnInit {
   currentView = 'banned-words';
-  constructor(private user: UserService) {}
+
+  constructor() {}
+
+  setView(e: any) {
+    this.currentView = e;
+  }
 
   ngOnInit(): void {}
 }

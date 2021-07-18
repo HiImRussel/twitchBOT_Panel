@@ -1,6 +1,13 @@
 <div class="MainPanel">
   <ng-container [ngSwitch]="currentView">
-    <app-banned-words *ngSwitchCase="'banned-words'"></app-banned-words>
+    <app-banned-words
+      *ngSwitchCase="'banned-words'"
+      (viewEmmiter)="setView($event)"
+    ></app-banned-words>
+    <app-add-banned-word
+      *ngSwitchCase="'add-word'"
+      (viewEmmiter)="setView($event)"
+    ></app-add-banned-word>
     <app-banners *ngSwitchCase="'banners'"></app-banners>
   </ng-container>
 </div>

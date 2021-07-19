@@ -13,6 +13,7 @@
       placeholder="Word"
       [(ngModel)]="wordName"
       name="wordName"
+      autocomplete="off"
     />
     <select (change)="changeType($event)">
       <option value="perm">Perm ban</option>
@@ -24,6 +25,7 @@
       *ngIf="!perm"
       [(ngModel)]="time"
       name="time"
+      autocomplete="off"
     />
     <button>ADD</button>
   </form>

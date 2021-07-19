@@ -37,7 +37,11 @@ export class AddBannedWordComponent implements OnInit {
           time: this.time,
           userId: this.user.userData.id,
         })
-        .subscribe((data) => console.log(data));
+        .subscribe((data: any) => {
+          if (data.status === 'ok') {
+            this.goBack();
+          }
+        });
     }
   }
 

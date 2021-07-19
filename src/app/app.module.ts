@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard/dashboard.c
 import { BannedWordsComponent } from './components/banned-words/banned-words.component';
 import { BannersComponent } from './components/banners/banners.component';
 import { AddBannedWordComponent } from './components/addBannedWord/add-banned-word/add-banned-word.component';
+import { EditWordComponent } from './components/editWord/edit-word/edit-word.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AddBannedWordComponent } from './components/addBannedWord/add-banned-wo
     BannedWordsComponent,
     BannersComponent,
     AddBannedWordComponent,
+    EditWordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

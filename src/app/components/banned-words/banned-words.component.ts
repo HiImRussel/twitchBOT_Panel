@@ -13,6 +13,9 @@ export class BannedWordsComponent implements OnInit {
   @Output()
   viewEmmiter = new EventEmitter();
 
+  @Output()
+  wordEmmiter = new EventEmitter();
+
   constructor(private user: UserService, private http: HttpClient) {}
 
   deleteWord(id: string) {
@@ -26,12 +29,16 @@ export class BannedWordsComponent implements OnInit {
     this.viewEmmiter.emit('add-word');
   }
 
+  edit(word: any) {
+    this.viewEmmiter.emit('edit-word');
+    this.wordEmmiter.emit(word);
+  }
+
   ngOnInit(): void {
     this.http
       .post('http://localhost:3000/getWords', {
         userId: this.user.userData.id,
       })
       .subscribe((data: any) => (this.words = data.words));
-    console.log(this.words);
   }
 }

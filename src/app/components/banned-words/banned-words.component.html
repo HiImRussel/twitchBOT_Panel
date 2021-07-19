@@ -5,7 +5,7 @@
   <div *ngFor="let word of words" class="bannedWordPanel__wordBox">
     {{ word.word }}
     <div class="bannedWordPanel__wordBox__buttons">
-      <button>
+      <button (click)="edit(word)">
         <svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0)">
             <path

@@ -38,7 +38,7 @@ export class RegisterPanelComponent implements OnInit {
 
   registerAsync() {
     return this.http.post('http://127.0.0.1:3000/register', {
-      name: this.userName,
+      name: this.userName.toLocaleLowerCase(),
       login: this.login,
       password: this.password,
     });

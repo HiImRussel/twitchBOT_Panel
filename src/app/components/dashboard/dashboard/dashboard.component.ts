@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +7,16 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashboardComponent implements OnInit {
   currentView = 'banned-words';
+  wordData: any;
 
   constructor() {}
 
   setView(e: any) {
     this.currentView = e;
+  }
+
+  setWord(e: any) {
+    this.wordData = e;
   }
 
   ngOnInit(): void {}

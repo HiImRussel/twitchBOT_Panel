@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
 export class MainPanelComponent implements OnInit {
   constructor(private user: UserService, private router: Router) {}
 
+  currentView = 'banned-words';
+
+  setView(view: string) {
+    this.currentView = view;
+  }
+
   ngOnInit(): void {
     if (this.user.userData.isLogged === false) {
       this.router.navigateByUrl('/login');

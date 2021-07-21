@@ -14,6 +14,7 @@
       [word]="wordData"
       (viewEmitter)="setView($event)"
     ></app-edit-word>
+    <app-song-request *ngSwitchCase="'song-request'"></app-song-request>
     <app-banners *ngSwitchCase="'banners'"></app-banners>
   </ng-container>
 </div>

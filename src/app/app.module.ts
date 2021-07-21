@@ -14,6 +14,8 @@ import { BannedWordsComponent } from './components/banned-words/banned-words.com
 import { BannersComponent } from './components/banners/banners.component';
 import { AddBannedWordComponent } from './components/addBannedWord/add-banned-word/add-banned-word.component';
 import { EditWordComponent } from './components/editWord/edit-word/edit-word.component';
+import { SongRequestComponent } from './components/SongRequest/song-request/song-request.component';
+import { ChangeViewNavDirective } from './directives/change-view-nav.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { EditWordComponent } from './components/editWord/edit-word/edit-word.com
     BannersComponent,
     AddBannedWordComponent,
     EditWordComponent,
+    SongRequestComponent,
+    ChangeViewNavDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

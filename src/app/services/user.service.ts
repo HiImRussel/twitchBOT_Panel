@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
@@ -10,7 +9,7 @@ export class UserService {
 
   userDataObservable = new Subject();
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   logIn(data: any) {
     this.userData = {
@@ -18,6 +17,11 @@ export class UserService {
       id: data._id,
       name: data.userName,
     };
+    this.userDataObservable.next(this.userData);
+  }
+
+  logout() {
+    this.userData = { isLogged: false };
     this.userDataObservable.next(this.userData);
   }
 

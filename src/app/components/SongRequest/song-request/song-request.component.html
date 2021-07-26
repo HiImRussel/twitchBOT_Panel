@@ -1,1 +1,3 @@
-<button>{{ isOn === true ? "Wyłącz" : "Włącz" }}</button>
+<button (click)="changeStatus()">
+  {{ isOn === true ? "Wyłącz" : "Włącz" }}
+</button>

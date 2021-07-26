@@ -1,2 +1,4 @@
-<app-nav-menu (currentViewEmmiter)="setView($event)"></app-nav-menu>
-<app-dashboard [currentView]="currentView"></app-dashboard>
+<div class="rootComponent">
+  <app-nav-menu (currentViewEmmiter)="setView($event)"></app-nav-menu>
+  <app-dashboard [currentView]="currentView"></app-dashboard>
+</div>

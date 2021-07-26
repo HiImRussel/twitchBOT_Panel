@@ -1,4 +1,5 @@
 <div class="MainPanel">
+  <button class="MainPanel__logoutButton" (click)="logout()">Logout</button>
   <ng-container [ngSwitch]="currentView">
     <app-banned-words
       *ngSwitchCase="'banned-words'"

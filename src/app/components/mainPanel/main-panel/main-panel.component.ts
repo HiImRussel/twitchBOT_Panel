@@ -22,5 +22,11 @@ export class MainPanelComponent implements OnInit {
     } else {
       this.router.navigateByUrl('/panel');
     }
+
+    this.user.getUserData().subscribe((data: any) => {
+      if (data.isLogged === false) {
+        this.router.navigateByUrl('/login');
+      }
+    });
   }
 }

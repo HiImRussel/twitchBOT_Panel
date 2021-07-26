@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   wordData: any;
 
-  constructor() {}
+  constructor(private user: UserService) {}
 
   setView(e: any) {
     this.currentView = e;
@@ -19,6 +20,10 @@ export class DashboardComponent implements OnInit {
 
   setWord(e: any) {
     this.wordData = e;
+  }
+
+  logout() {
+    this.user.logout();
   }
 
   ngOnInit(): void {}
